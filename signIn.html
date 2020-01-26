@@ -46,66 +46,30 @@
             <fieldset>
                 <!-- Text input-->
                 <div class="form-group">
-                    <label id="firstNameField" class="col-md-4 control-label" for="firstname">First Name</label>
+                    <label id="emailEntry" class="col-md-4 control-label" for="emailEntry">Email Address</label>
                     <br>
-                    <label id="firstNameError" style="color:red" class="col-md-4 control-label"
-                           for="firstNameError"></label>
                     <div style="text-align: center;">
                         <div class="row justify-content-center align-items-center h-100">
                             <div class="col-md-4">
-                                <input id="firstname" name="first name" type="text"
-                                       placeholder="John" class="form-control input-md"
-                                       required="" data-toggle="tooltip" data-placement="right"
-                                       title="Please enter your first name.">
+                                <input id="emailSignInField" name="email" type="text"
+                                       placeholder="johndoe@boilermake.win" class="form-control input-md"
+                                       required="" data-toggle="tooltip" data-placement="top"
+                                       title="Please enter your email address.">
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Text input-->
                 <div class="form-group">
-                    <label id="lastNameField" class="col-md-4 control-label" for="lastname">Last Name</label>
-                    <br>
-                    <label id="lastNameError" style="color:red" class="col-md-4 control-label"
-                           for="lastNameError"></label>
-                    <div style="text-align: center;">
-                        <div class="row justify-content-center align-items-center h-100">
-                            <div class="col-md-4">
-                                <input id="lastname" name="last name" type="text"
-                                       placeholder="Doe" class="form-control input-md"
-                                       required="" data-toggle="tooltip" data-placement="right"
-                                       title="Please enter your last name.">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Text input-->
-                <div class="form-group">
-                    <label id="emailField" class="col-md-4 control-label" for="email">Email Address</label>
+                    <label id="passwordEntry" class="col-md-4 control-label" for="passwordEntry">Password</label>
                     <br>
                     <div style="text-align: center;">
                         <div class="row justify-content-center align-items-center h-100">
                             <div class="col-md-4">
-                                <input id="email" name="email" type="text"
-                                       placeholder="johndoe@boilermake.win"
-                                       class="form-control input-md"
-                                       required="" data-toggle="tooltip" data-placement="right"
-                                       title="Please enter your email.">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Password input-->
-                <div class="form-group">
-                    <label id="passwordField" class="col-md-4 control-label"
-                           for="password">Password</label>
-                    <br>
-                    <div style="text-align: center;">
-                        <div class="row justify-content-center align-items-center h-100">
-                            <div class="col-md-4 align-center">
-                                <input id="password" name="password" type="password"
-                                       placeholder="" class="form-control input-md" required=""
-                                       title="Please enter a password that is at minimum 8 characters,
-                                   at maximum 20 characters, and only contains the characters A-Z and the numbers 0-9!">
+                                <input id="passwordSignInField" name="last name" type="password"
+                                       placeholder="" class="form-control input-md"
+                                       required="" data-toggle="tooltip" data-placement="bottom"
+                                       title="Please enter your password.">
                             </div>
                         </div>
                     </div>
@@ -134,26 +98,22 @@
 </html>
 <!--suppress JSCheckFunctionSignatures -->
 <script>
-    function createAccount() {
-        let first = document.getElementById("firstname").value;
-        let last = document.getElementById("lastname").value;
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value;
+    function resetErrorMessages() {
+        document.getElementById("emailEntry").innerText = "";
+        document.getElementById("passwordSignInField").innerText = "";
+    }
 
-        if (!(/^[a-zA-Z]+$/).test(first)) {
-            document.getElementById("firstNameError").innerText = "Please make sure that you have filled the first " +
-                "name field with only alphabetic characters!";
-            return;
-        } else if (!(/^[a-zA-Z]+$/).test(last)) {
-            document.getElementById("lastNameError").innerText = "Please make sure that you have filled the last name" +
-                " field with only alphabetic characters!";
-            return;
-        }
-        console.log(email);
-        firebase.auth().createUserWithEmailAndPassword(email, String(password)).catch(function (error) {
+    function createAccount() {
+
+        resetErrorMessages();
+
+        let email = document.getElementById("emailEntry").value;
+        let pass = document.getElementById("passwordSignInField").value;
+
+        firebase.auth().signInWithEmailAndPassword(String(email), String(pass)).catch(function (error) {
             document.getElementById("generalErrorLabel").innerText = error.message;
+            console.log(error);
         });
-        console.log(error);
 
         console.log("made user with " + firebase.auth().currentUser);
 
@@ -163,6 +123,7 @@
 
         console.log("updated display name");
 
-
+        alert("Signed in, now redirecting you to your profile...");
+        window.location = "signedIn.html";
     }
 </script>

@@ -1,74 +1,92 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Lebn</title>
-  </head>
+</head>
 
 <!-- CORE FIREBASE BEGINS HERE -->
 
 <!-- CORE FIREBASE ENDS HERE -->
 
-  <body>
-    <font face="avenir" size="36"><center>LEBN - A <u>privacy-first</u>, health management system.</center></font>
+<body>
+<span style="text-align: center; font-family: avenir,serif; ">LEBN - A <u>privacy-first</u>, health management system.</span>
 
-      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-      <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-      <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
-      <!-- Add Firebase products that you want to use -->
-      <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
 
-      <script>
-        var firebaseConfig = {
-          apiKey: "AIzaSyDG1HHqsrk5G6gnwBp81YVvVzHFlVr5Fuo",
-          authDomain: "lebn-2020.firebaseapp.com",
-          databaseURL: "https://lebn-2020.firebaseio.com",
-          projectId: "lebn-2020",
-          storageBucket: "lebn-2020.appspot.com",
-          messagingSenderId: "713904309004",
-          appId: "1:713904309004:web:df9b5756de6bd981083f29",
-          measurementId: "G-20B6NZ24ZQ"
-        };
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyDG1HHqsrk5G6gnwBp81YVvVzHFlVr5Fuo",
+        authDomain: "lebn-2020.firebaseapp.com",
+        databaseURL: "https://lebn-2020.firebaseio.com",
+        projectId: "lebn-2020",
+        storageBucket: "lebn-2020.appspot.com",
+        messagingSenderId: "713904309004",
+        appId: "1:713904309004:web:df9b5756de6bd981083f29",
+        measurementId: "G-20B6NZ24ZQ"
+    };
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-      </script>
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
 
-      <div class="jumbotron d-flex align-items-center min-vh-50">
-        <div class="container text-center">
-          <text><center><font face="avenir">Returning User? Click the <b>Sign In</b> button below.</font></center></text>
-          <br>
-          <center><button onclick = "returningUserPageCall()" id = "returningUserButton" type="button" class="btn btn-success">Sign In</button></center>
-          <br>
-          <center><button onclick = "newUserPageCall()" id = "newUserButton" type="button" class="btn btn-danger">Create a new Account</button></center>
+<div class="jumbotron d-flex align-items-center min-vh-50">
+    <div class="container text-center">
+        <text>
+            <div style="text-align: center;"><span style="font-family: avenir,serif; ">Returning User? Click the <b>Sign In</b> button below.</span>
+            </div>
+        </text>
+        <br>
+        <div style="text-align: center;">
+            <button onclick="returningUserPageCall()" id="returningUserButton" type="button" class="btn btn-success">
+                Sign In
+            </button>
         </div>
-      </div>
+        <br>
+        <div style="text-align: center;">
+            <button onclick="newUserPageCall()" id="newUserButton" type="button" class="btn btn-danger">Create a new
+                Account
+            </button>
+        </div>
+    </div>
+</div>
 
-      <!--<text><center><font face="avenir" size="72"><b>"INSERT LOGO HERE"</b></font></center><text> -->
+<!--<text><center><font face="avenir" size="72"><b>"INSERT LOGO HERE"</b></font></center><text> -->
 
-      <center><img src="img/Fadookie_Caduceus.svg" width="25%" height="25%"></center>
+<div style="text-align: center;"><img src="img/Fadookie_Caduceus.svg" width="25%" height="25%" alt="Hospital Symbol"></div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
 </html>
 
 <script>
-    function returningUserPageCall(){
-      window.location = "signIn.html"
+    function returningUserPageCall() {
+        window.location = "signIn.html"
     }
 
-    function newUserPageCall(){
-      window.location = "newUser.html"
+    function newUserPageCall() {
+        window.location = "newUser.html"
     }
 </script>

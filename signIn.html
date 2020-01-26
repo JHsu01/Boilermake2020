@@ -1,122 +1,168 @@
 <!doctype html>
 <html lang="en">
-   <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-      <title>Lebn</title>
-   </head>
-   <!-- CORE FIREBASE BEGINS HERE -->
-   <!-- CORE FIREBASE ENDS HERE -->
-   <body>
-      <font face="avenir" size="36">
-         <center>LEBN - A <u>privacy-first</u>, health management system.</center>
-      </font>
-      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-      <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-      <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
-      <!-- Add Firebase products that you want to use -->
-      <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
-      <script>
-         var firebaseConfig = {
-           apiKey: "AIzaSyDG1HHqsrk5G6gnwBp81YVvVzHFlVr5Fuo",
-           authDomain: "lebn-2020.firebaseapp.com",
-           databaseURL: "https://lebn-2020.firebaseio.com",
-           projectId: "lebn-2020",
-           storageBucket: "lebn-2020.appspot.com",
-           messagingSenderId: "713904309004",
-           appId: "1:713904309004:web:df9b5756de6bd981083f29",
-           measurementId: "G-20B6NZ24ZQ"
-         };
-
-         // Initialize Firebase
-         firebase.initializeApp(firebaseConfig);
-      </script>
-      <div class="jumbotron d-flex align-items-center min-vh-50">
-         <div class="container text-center">
-            <form class="form-horizontal">
-               <fieldset>
-                  <!-- Text input-->
-                  <div class="form-group">
-                     <label id="firstNameField" class="col-md-4 control-label" for="first name">First Name</label>
-                     <br>
-                     <label id="firstNameError" style="color:red " class="col-md-4 control-label" for="first name error"></label>
-                     <center>
-                     <div class="col-md-4">
-                        <input id="firstname" name="first name" type="text"
-                        placeholder="John" class="form-control input-md"
-                        required="" data-toggle="tooltip" data-placement="right"
-                        title="Please enter your first name.">
-                     </div>
-                     </center>
-                  </div>
-                  <!-- Text input-->
-                  <div class="form-group">
-                     <label id="lastNameField" class="col-md-4 control-label" for="lastname">Last Name</label>
-                     <label id="lastNameError" class="col-md-4 control-label" for="last name error"></label>
-                     <center>
-                     <div class="col-md-4">
-                       <input id="lastname" name="last name" type="text"
-                       placeholder="Doe" class="form-control input-md"
-                       required="" data-toggle="tooltip" data-placement="right"
-                       title="Please enter your last name.">
-                     </div>
-                     </center>
-                  </div>
-                  <!-- Text input-->
-                  <div class="form-group">
-                     <label id="emailField" class="col-md-4 control-label" for="email">Email Address</label>
-                     <label id="emailError" class="col-md-4 control-label" for="email error"></label>
-                     <center>
-                     <div class="col-md-4">
-                        <input id="email" name="email" type="text"
-                        placeholder="johndoe@boilermake.win"
-                        class="form-control input-md"
-                        required="" data-toggle="tooltip" data-placement="right"
-                        title="Please enter your email.">
-                     </div>
-                     </center>
-                  </div>
-                  <!-- Password input-->
-                  <div class="form-group">
-                     <label id="passwordField" class="col-md-4 control-label" for="password">Password</label>
-                     <label id="passwordError" class="col-md-4 control-label" for="password error"></label>
-                     <center>
-                     <div class="col-md-4">
-                       <input id="password" name="password" type="password"
-                       placeholder="" class="form-control input-md" required=""
-                       title="Please enter a password that is at minimum 8 characters, at maximum 20 characters, and only contains the characters A-Z and the numbers 0-9!">
-                     </div>
-                     </center>
-                  </div>
-               </fieldset>
-            </form>
-            <button type="button" onclick="createAccount()" class="btn btn-success">Create Account</button>
-         </div>
-      </div>
-      <!--<text><center><font face="avenir" size="72"><b>"INSERT LOGO HERE"</b></font></center><text> -->
-      <center><img src="img/Fadookie_Caduceus.svg" width="25%" height="25%"></center>
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   </body>
-</html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Lebn</title>
+</head>
+<!-- CORE FIREBASE BEGINS HERE -->
+<!-- CORE FIREBASE ENDS HERE -->
+<body>
+<!--suppress CssNoGenericFontName -->
+<span style="font-family: avenir">
+    <!--suppress HtmlUnknownTag -->
+    <div style="text-align: center;">LEBN - A <u>privacy-first</u>, health management system.</div>
+</span>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+<!--suppress ES6ConvertVarToLetConst -->
 <script>
-   function createAccount(){
-     var first = document.getElementById(firstNameField)
-     var last = document.getElementById(lastNameField)
-     var email = document.getElementById(emailField)
-     var password = document.getElementById(passwordField)
+    var firebaseConfig = {
+        apiKey: "AIzaSyDG1HHqsrk5G6gnwBp81YVvVzHFlVr5Fuo",
+        authDomain: "lebn-2020.firebaseapp.com",
+        databaseURL: "https://lebn-2020.firebaseio.com",
+        projectId: "lebn-2020",
+        storageBucket: "lebn-2020.appspot.com",
+        messagingSenderId: "713904309004",
+        appId: "1:713904309004:web:df9b5756de6bd981083f29",
+        measurementId: "G-20B6NZ24ZQ"
+    };
 
-     if(/^[a-zA-Z]+$/.test(first)){
-        document.getElementById(firstNameError).innerHTML("Please ensure that your first name field only contains alphabets!")
-     }
-)
-   }
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+<div class="jumbotron d-flex align-items-center min-vh-50">
+    <div class="container text-center">
+        <form class="form-horizontal">
+            <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label id="firstNameField" class="col-md-4 control-label" for="firstname">First Name</label>
+                    <br>
+                    <label id="firstNameError" style="color:red" class="col-md-4 control-label"
+                           for="firstNameError"></label>
+                    <div style="text-align: center;">
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-md-4">
+                                <input id="firstname" name="first name" type="text"
+                                       placeholder="John" class="form-control input-md"
+                                       required="" data-toggle="tooltip" data-placement="right"
+                                       title="Please enter your first name.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label id="lastNameField" class="col-md-4 control-label" for="lastname">Last Name</label>
+                    <br>
+                    <label id="lastNameError" style="color:red" class="col-md-4 control-label"
+                           for="lastNameError"></label>
+                    <div style="text-align: center;">
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-md-4">
+                                <input id="lastname" name="last name" type="text"
+                                       placeholder="Doe" class="form-control input-md"
+                                       required="" data-toggle="tooltip" data-placement="right"
+                                       title="Please enter your last name.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label id="emailField" class="col-md-4 control-label" for="email">Email Address</label>
+                    <br>
+                    <div style="text-align: center;">
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-md-4">
+                                <input id="email" name="email" type="text"
+                                       placeholder="johndoe@boilermake.win"
+                                       class="form-control input-md"
+                                       required="" data-toggle="tooltip" data-placement="right"
+                                       title="Please enter your email.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Password input-->
+                <div class="form-group">
+                    <label id="passwordField" class="col-md-4 control-label"
+                           for="password">Password</label>
+                    <br>
+                    <div style="text-align: center;">
+                        <div class="row justify-content-center align-items-center h-100">
+                            <div class="col-md-4 align-center">
+                                <input id="password" name="password" type="password"
+                                       placeholder="" class="form-control input-md" required=""
+                                       title="Please enter a password that is at minimum 8 characters,
+                                   at maximum 20 characters, and only contains the characters A-Z and the numbers 0-9!">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label id="generalErrorLabel" style="color:red" class="col-md-4 control-label"></label>
+            </fieldset>
+        </form>
+        <button type="button" onclick="createAccount()" class="btn btn-success">Create Account</button>
+    </div>
+</div>
+<!--<text><center><font face="avenir" size="72"><b>"INSERT LOGO HERE"</b></font></center><text> -->
+<div style="text-align: center;"><img src="img/Fadookie_Caduceus.svg" width="25%" height="25%" alt="Hospital Symbol">
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+<!--suppress JSCheckFunctionSignatures -->
+<script>
+    function createAccount() {
+        let first = document.getElementById("firstname").value;
+        let last = document.getElementById("lastname").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (!(/^[a-zA-Z]+$/).test(first)) {
+            document.getElementById("firstNameError").innerText = "Please make sure that you have filled the first " +
+                "name field with only alphabetic characters!";
+            return;
+        } else if (!(/^[a-zA-Z]+$/).test(last)) {
+            document.getElementById("lastNameError").innerText = "Please make sure that you have filled the last name" +
+                " field with only alphabetic characters!";
+            return;
+        }
+        console.log(email);
+        firebase.auth().createUserWithEmailAndPassword(email, String(password)).catch(function (error) {
+            document.getElementById("generalErrorLabel").innerText = error.message;
+        });
+        console.log(error);
+
+        console.log("made user with " + firebase.auth().currentUser);
+
+        if (firebase.auth().currentUser != null) {
+            firebase.auth().currentUser.displayName = last + "," + first;
+        }
+
+        console.log("updated display name");
+
+
+    }
 </script>

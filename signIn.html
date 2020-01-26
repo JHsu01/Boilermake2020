@@ -9,9 +9,7 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Lebn</title>
 </head>
-<!-- CORE FIREBASE BEGINS HERE -->
-<!-- CORE FIREBASE ENDS HERE -->
-<body>
+<body onload="checkForSignedInStatus()">
 <!--suppress CssNoGenericFontName -->
 <span style="font-family: avenir">
     <!--suppress HtmlUnknownTag -->
@@ -126,5 +124,13 @@
 
         alert("Signed in, now redirecting you to your profile...");
         window.location = "signedIn.html";
+    }
+
+    function checkForSignedInStatus() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                location.replace("signedIn.html");
+            }
+        });
     }
 </script>

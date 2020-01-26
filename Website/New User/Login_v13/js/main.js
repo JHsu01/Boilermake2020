@@ -12,7 +12,7 @@
             else {
                 $(this).removeClass('has-val');
             }
-        })    
+        })
     })
 
 
@@ -42,7 +42,6 @@
                 check=false;
             }
         }
-
         return check;
     });
 

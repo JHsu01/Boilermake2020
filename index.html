@@ -1,92 +1,102 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    &lt;!&ndash; Required meta tags &ndash;&gt;-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Lebn</title>
-</head>
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
+<!--          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+<!--    <title>Lebn</title>-->
+<!--</head>-->
 
-<!-- CORE FIREBASE BEGINS HERE -->
+<!--&lt;!&ndash; CORE FIREBASE BEGINS HERE &ndash;&gt;-->
 
-<!-- CORE FIREBASE ENDS HERE -->
+<!--&lt;!&ndash; CORE FIREBASE ENDS HERE &ndash;&gt;-->
 
-<body>
-<span style="text-align: center; font-family: avenir,serif; ">LEBN - A <u>privacy-first</u>, health management system.</span>
+<!--<body>-->
+<!--<span style="text-align: center; font-family: avenir,serif; ">LEBN - A <u>privacy-first</u>, health management system.</span>-->
 
-<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
-<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
-<!-- Add Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+<!--&lt;!&ndash; Firebase App (the core Firebase SDK) is always required and must be listed first &ndash;&gt;-->
+<!--<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>-->
+<!--&lt;!&ndash; If you enabled Analytics in your project, add the Firebase SDK for Analytics &ndash;&gt;-->
+<!--<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>-->
+<!--&lt;!&ndash; Add Firebase products that you want to use &ndash;&gt;-->
+<!--<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>-->
+<!--<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>-->
 
-<script>
-    var firebaseConfig = {
-        apiKey: "AIzaSyDG1HHqsrk5G6gnwBp81YVvVzHFlVr5Fuo",
-        authDomain: "lebn-2020.firebaseapp.com",
-        databaseURL: "https://lebn-2020.firebaseio.com",
-        projectId: "lebn-2020",
-        storageBucket: "lebn-2020.appspot.com",
-        messagingSenderId: "713904309004",
-        appId: "1:713904309004:web:df9b5756de6bd981083f29",
-        measurementId: "G-20B6NZ24ZQ"
-    };
+<!--<script>-->
+<!--    var firebaseConfig = {-->
+<!--        apiKey: "AIzaSyDG1HHqsrk5G6gnwBp81YVvVzHFlVr5Fuo",-->
+<!--        authDomain: "lebn-2020.firebaseapp.com",-->
+<!--        databaseURL: "https://lebn-2020.firebaseio.com",-->
+<!--        projectId: "lebn-2020",-->
+<!--        storageBucket: "lebn-2020.appspot.com",-->
+<!--        messagingSenderId: "713904309004",-->
+<!--        appId: "1:713904309004:web:df9b5756de6bd981083f29",-->
+<!--        measurementId: "G-20B6NZ24ZQ"-->
+<!--    };-->
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-</script>
+<!--    // Initialize Firebase-->
+<!--    firebase.initializeApp(firebaseConfig);-->
+<!--</script>-->
 
-<div class="jumbotron d-flex align-items-center min-vh-50">
-    <div class="container text-center">
-        <text>
-            <div style="text-align: center;"><span style="font-family: avenir,serif; ">Returning User? Click the <b>Sign In</b> button below.</span>
-            </div>
-        </text>
-        <br>
-        <div style="text-align: center;">
-            <button onclick="returningUserPageCall()" id="returningUserButton" type="button" class="btn btn-success">
-                Sign In
-            </button>
-        </div>
-        <br>
-        <div style="text-align: center;">
-            <button onclick="newUserPageCall()" id="newUserButton" type="button" class="btn btn-danger">Create a new
-                Account
-            </button>
-        </div>
-    </div>
-</div>
+<!--<div class="jumbotron d-flex align-items-center min-vh-50">-->
+<!--    <div class="container text-center">-->
+<!--        <text>-->
+<!--            <div style="text-align: center;"><span style="font-family: avenir,serif; ">Returning User? Click the <b>Sign In</b> button below.</span>-->
+<!--            </div>-->
+<!--        </text>-->
+<!--        <br>-->
+<!--        <div style="text-align: center;">-->
+<!--            <button onclick="returningUserPageCall()" id="returningUserButton" type="button" class="btn btn-success">-->
+<!--                Sign In-->
+<!--            </button>-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <div style="text-align: center;">-->
+<!--            <button onclick="newUserPageCall()" id="newUserButton" type="button" class="btn btn-danger">Create a new-->
+<!--                Account-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-<!--<text><center><font face="avenir" size="72"><b>"INSERT LOGO HERE"</b></font></center><text> -->
+<!--&lt;!&ndash;<text><center><font face="avenir" size="72"><b>"INSERT LOGO HERE"</b></font></center><text> &ndash;&gt;-->
 
-<div style="text-align: center;"><img src="img/Fadookie_Caduceus.svg" width="25%" height="25%" alt="Hospital Symbol"></div>
+<!--<div style="text-align: center;"><img src="img/Fadookie_Caduceus.svg" width="25%" height="25%" alt="Hospital Symbol"></div>-->
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+<!--&lt;!&ndash; Optional JavaScript &ndash;&gt;-->
+<!--&lt;!&ndash; jQuery first, then Popper.js, then Bootstrap JS &ndash;&gt;-->
+<!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"-->
+<!--        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"-->
+<!--        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"-->
+<!--        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<script>-->
+<!--    function returningUserPageCall() {-->
+<!--        window.location = "signIn.html"-->
+<!--    }-->
+
+<!--    function newUserPageCall() {-->
+<!--        window.location = "Website/New User/Login_v13/index.html"-->
+<!--    }-->
+<!--</script>-->
+
+<html>
+<body onload="openActualLandingPage();">
 </body>
-</html>
-
 <script>
-    function returningUserPageCall() {
-        window.location = "signIn.html"
-    }
-
-    function newUserPageCall() {
-        window.location = "Website/New User/Login_v13/index.html"
+    function openActualLandingPage() {
+        location.replace("Website/Landing Page/index.html")
     }
 </script>
+</html>
